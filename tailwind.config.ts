@@ -17,9 +17,9 @@ export default {
         "footer-bg": "#1b1c1a"
       },
       fontFamily: {
-        "headline": ["Noto Serif", "serif"],
-        "body": ["Manrope", "sans-serif"],
-        "label": ["Manrope", "sans-serif"]
+        "headline": ['"Cabrito Flare"', "serif"],
+        "body": ['"Poppins"', "sans-serif"],
+        "label": ['"Poppins"', "sans-serif"]
       },
       borderRadius: {
         "DEFAULT": "0.125rem",

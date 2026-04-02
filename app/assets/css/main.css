@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Cabrito Flare';
+  src: url('/fonts/cabrito-flare-w05-ext-medium.woff2') format('woff2'),
+       url('/fonts/cabrito-flare-w05-ext-medium.woff') format('woff'),
+       url('/fonts/cabrito-flare-w05-ext-medium.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

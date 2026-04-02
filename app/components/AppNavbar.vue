@@ -1,6 +1,6 @@
 <template>
   <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 md:px-14 py-5 transition-all duration-500 bg-gradient-to-b from-black/70 to-transparent backdrop-blur-[4px]">
-    <div class="text-3xl font-serif tracking-[0.3em] text-white cursor-pointer hover:opacity-80 transition-opacity">
+    <div class="text-3xl font-headline tracking-[0.3em] text-white cursor-pointer hover:opacity-80 transition-opacity">
       MUUD
     </div>
     

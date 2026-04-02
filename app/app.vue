@@ -2,10 +2,7 @@
   <div>
     <AppNavbar />
     <main>
-      <HeroSection />
-      <ArsenalSection />
-      <ProblemSection />
-      <LimitedProductionSection />
+      <NuxtPage />
     </main>
     <AppFooter />
   </div>
