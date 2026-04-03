@@ -25,8 +25,23 @@
         </div>
 
         <!-- Product 2: Focus -->
-        <div class="bg-[#FBF9F6] border border-[#EBE8E0] flex flex-col h-full pb-8">
-          <img alt="MUUD Focus" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHQuHbmvMpdjbwsTXY7W9fT_d_K6c9sLATBpK5lkFhF39tJlzDqa30Imk83thUzm8zVCDmQzMVJhjUWDT97eAEwlltTy7J1UGM0Pt4D1QB7AqPxjEiJIlZLTIzz-3kNDm_M3HYRPWSaFQ1douk2d52EgJfdzr6057GShhVRQHzas-cGKs5fXeRcK6ruy9sX0tUPHT0qrvCV84AQ9AmZIxgQzeT7_i8weNG7Vlk6G2NOWLzD9iIn1ZM4ESSPpVPOZN6-nohkVpfhEM"/>
+        <div class="bg-[#FBF9F6] border border-[#EBE8E0] flex flex-col h-full pb-8 group">
+          <div class="w-full aspect-square bg-[#F5F3F0] flex items-center justify-center relative overflow-hidden">
+            <!-- Circulo animado em breve -->
+            <div class="absolute inset-0 flex items-center justify-center opacity-30 animate-spin-slow">
+              <svg viewBox="0 0 100 100" class="w-3/4 h-3/4">
+                <defs>
+                  <path id="brevePath2" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
+                </defs>
+                <text class="font-label text-[8px] uppercase tracking-[0.2em] font-bold fill-[#1b1c1a]">
+                  <textPath xlink:href="#brevePath2">
+                    EM BREVE • EM BREVE • EM BREVE • EM BREVE • 
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+            <span class="font-label text-[10px] uppercase tracking-[0.3em] text-[#1b1c1a] font-bold relative z-10">Lançamento</span>
+          </div>
           <div class="pt-8 flex flex-col items-center flex-grow text-center">
             <h3 class="font-headline text-3xl text-[#1b1c1a] mb-3">Focus</h3>
             <div class="w-6 h-px bg-[#C49C65] mb-5"></div>
@@ -37,8 +52,23 @@
         </div>
 
         <!-- Product 3: Energy -->
-        <div class="bg-[#FBF9F6] border border-[#EBE8E0] flex flex-col h-full pb-8">
-          <img alt="MUUD Energy" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl39VHZ3PZaXhjRl4jRsPxDvUoeCRKun-hoAdj30pF-yVFlD_LK9O-3_A7HMloYS9YIXRTwOY0J5wT2_aRYM6vs4lRN0y3BKII2npueT0czo-Ju-qdVLfZTn-F0Q3WzuH67fsZwKVoua0G80dEvO-si4JBbl_CJaVN4RTQd0gjBbradvERoY7tN26c5uBdaDD04N60lKWW04rLrM6Q22KC5ma8-E7L3nttnOx87jL0ld25rIdTf2dUqw1ll8fh9g2be9yiePGC8Zc"/>
+        <div class="bg-[#FBF9F6] border border-[#EBE8E0] flex flex-col h-full pb-8 group">
+          <div class="w-full aspect-square bg-[#F5F3F0] flex items-center justify-center relative overflow-hidden">
+            <!-- Circulo animado em breve -->
+            <div class="absolute inset-0 flex items-center justify-center opacity-30 animate-spin-slow">
+              <svg viewBox="0 0 100 100" class="w-3/4 h-3/4">
+                <defs>
+                  <path id="brevePath3" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
+                </defs>
+                <text class="font-label text-[8px] uppercase tracking-[0.2em] font-bold fill-[#1b1c1a]">
+                  <textPath xlink:href="#brevePath3">
+                    EM BREVE • EM BREVE • EM BREVE • EM BREVE • 
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+            <span class="font-label text-[10px] uppercase tracking-[0.3em] text-[#1b1c1a] font-bold relative z-10">Lançamento</span>
+          </div>
           <div class="pt-8 flex flex-col items-center flex-grow text-center">
             <h3 class="font-headline text-3xl text-[#1b1c1a] mb-3">Energy</h3>
             <div class="w-6 h-px bg-[#DB8C5C] mb-5"></div>
@@ -49,8 +79,23 @@
         </div>
 
         <!-- Product 4: Night -->
-        <div class="bg-[#FBF9F6] border border-[#EBE8E0] flex flex-col h-full pb-8">
-          <img alt="MUUD Night" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiFZCJq05JvSgt7G3PcXPc4o3_7udjZJVn18kVqkqRHpQLkphj8mrQoOZsRrO9tq0B6LdDbrV78HopuYhY7e8TzgOOU7NUuvSEBnUg7wxht0MPBkPvWiXKeGwjgKF_2QEvf5LJuO603T7YZNS1FFORGVyoUHupjqPsJCCIuFrNXVGobarTMuWwdZEctcVo1gM-eKNFxCXzkwtdHS55qyFeeybW3KdQ0Nm6GCTCEhoGR-QopDyzKk4NF10PS5J8cAE4EVkQFgOKXhc"/>
+        <div class="bg-[#FBF9F6] border border-[#EBE8E0] flex flex-col h-full pb-8 group">
+          <div class="w-full aspect-square bg-[#F5F3F0] flex items-center justify-center relative overflow-hidden">
+            <!-- Circulo animado em breve -->
+            <div class="absolute inset-0 flex items-center justify-center opacity-30 animate-spin-slow">
+              <svg viewBox="0 0 100 100" class="w-3/4 h-3/4">
+                <defs>
+                  <path id="brevePath4" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
+                </defs>
+                <text class="font-label text-[8px] uppercase tracking-[0.2em] font-bold fill-[#1b1c1a]">
+                  <textPath xlink:href="#brevePath4">
+                    EM BREVE • EM BREVE • EM BREVE • EM BREVE • 
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+            <span class="font-label text-[10px] uppercase tracking-[0.3em] text-[#1b1c1a] font-bold relative z-10">Lançamento</span>
+          </div>
           <div class="pt-8 flex flex-col items-center flex-grow text-center">
             <h3 class="font-headline text-3xl text-[#1b1c1a] mb-3">Night</h3>
             <div class="w-6 h-px bg-[#697A91] mb-5"></div>
@@ -71,3 +116,14 @@
 
 <script setup lang="ts">
 </script>
+
+<style scoped>
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin 15s linear infinite;
+}
+</style>
