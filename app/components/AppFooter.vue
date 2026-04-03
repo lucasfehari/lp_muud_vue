@@ -1,6 +1,6 @@
 <template>
   <footer class="w-full px-8 py-24 bg-footer-bg text-center flex flex-col items-center">
-    <div class="text-3xl font-headline tracking-[0.4em] text-white mb-16">MUUD</div>
+    <div class="text-3xl font-headline text-white mb-16">MUUD</div>
     <div class="flex flex-wrap justify-center gap-10 mb-16">
       <a class="font-label text-[10px] uppercase tracking-widest text-white/40 hover:text-white transition-colors" href="#">PRODUTOS</a>
       <a class="font-label text-[10px] uppercase tracking-widest text-white/40 hover:text-white transition-colors" href="#">CIÊNCIA</a>

@@ -1,9 +1,10 @@
 <template>
   <section class="py-32 px-8 bg-on-primary">
+    <LinhaDivisao />
     <div class="max-w-7xl mx-auto space-y-20">
       <div class="text-center space-y-6">
-        <h2 class="font-headline text-4xl md:text-5xl text-on-surface font-light">
-          Seu dia muda. <span class="italic text-primary">Seu ritmo também.</span>
+        <h2 class="uppercase font-headline text-4xl md:text-5xl text-on-surface font-light">
+          Seu dia muda. <span class="text-primary">Seu ritmo também.</span>
         </h2>
         <p class="font-body text-[15px] md:text-[17px] text-[#7A756D] leading-relaxed max-w-2xl mx-auto">
           MUUD organiza isso de forma simples:
@@ -13,7 +14,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Product 1: Calm -->
         <div class="bg-[#FBF9F6] border border-[#EBE8E0] flex flex-col h-full pb-8">
-          <img alt="MUUD Calm" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBay4ZrGXrRHJEqfY4qwSzXE1VEX3goIKkBrlgKRtoK-eBxJwRmVN6YzW-oy_dvo2uiCBC0f6vVbQxXnAePUYueL0d6pUuzgyzKI--YzSoMyXPzOv_Qas_KprzPZSFOXD-BKIKidRT-gBUY4BwFecWWF7c9ukNOf2PhWIxrwPyPCZ0rsWLXn0W4FT4j0zRbQ3Em4LpIjrtQz899e6_db1vqM9HxH63hnz-9_5NuaeLm3WJ67Xj6qLoEIjomnsPnQROKvqlvEaxm11g"/>
+          <img alt="MUUD Calm" class="w-full aspect-square object-cover" src="/assets/images/caixa_pirulito.png"/>
           <div class="pt-8 flex flex-col items-center flex-grow text-center">
             <h3 class="font-headline text-3xl text-[#1b1c1a] mb-3">Calm</h3>
             <div class="w-6 h-px bg-[#7A98A1] mb-5"></div>

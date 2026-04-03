@@ -3,8 +3,8 @@
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-20 space-y-6">
         <label class="font-label text-[#E0C8A0] uppercase tracking-[0.3em] text-[10px] font-bold">FÓRMULA LIMPA</label>
-        <h2 class="font-headline text-4xl md:text-5xl font-light">
-          O que tem no <span class="italic text-[#E0C8A0]">seu ritual.</span>
+        <h2 class="uppercase font-headline text-4xl md:text-5xl font-light">
+          O que tem no <span class="text-[#E0C8A0]">seu ritual.</span>
         </h2>
       </div>
       
