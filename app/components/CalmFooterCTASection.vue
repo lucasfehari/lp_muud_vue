@@ -10,7 +10,7 @@
         <div class="text-[40px] font-headline text-[#1b1c1a] leading-none mb-1">R$ 99,90</div>
         <p class="text-[14px] text-[#7A756D] mb-2 font-medium">ou 3x de R$ 33,30 sem juros</p>
         <LinhaDivisao class="mb-0" />
-        <ButtonGradient text="Comprar MUUD Calm"  link="#comprar" />
+        <ButtonGradient text="Comprar Agora"  link="#comprar" />
       </div>
     </div>
   </section>
