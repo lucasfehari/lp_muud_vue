@@ -9,10 +9,12 @@
         Para os momentos em que o dia acelera mais do que deveria.<br/>
         Um ajuste simples na sua rotina.
       </p>
+      <!-- Imagem produto -->
       <div class="pt-8">
-        <NuxtLink to="/calm" class="inline-block bg-[#1b1c1a] text-white px-14 py-5 font-label text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-black transition-colors rounded-none shadow-xl transform hover:-translate-y-1 transition-transform">
-          COMPRAR O MUUD CALM
-        </NuxtLink>
+        <img src="/assets/images/muudcalm_caixa.png" alt="MUUD Calm" class="w-250px max-w-5xl mx-auto h-full object-cover" />
+      </div>
+      <div class="pt-8">
+        <ButtonGradient />
       </div>
     </div>
   </section>

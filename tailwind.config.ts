@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         "primary": "#B48C57",
-        "on-primary": "#ffffff",
+        "on-primary": "#fefafd",
         "surface": "#fbf9f6",
         "surface-container": "#f5f3f0",
         "on-surface": "#1b1c1a",

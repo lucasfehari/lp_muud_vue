@@ -1,5 +1,5 @@
 <template>
-  <section class="relative min-h-[90dvh] flex flex-col items-center justify-center text-center px-8 bg-[#FBF9F6] pt-32 pb-16">
+  <section class="relative min-h-[90dvh] flex flex-col items-center justify-center text-center px-8 bg-on-primary pt-32 pb-16">
     <div class="max-w-4xl mx-auto space-y-8 animate-fade-in-up mt-12">
       <h1 class="font-headline text-5xl md:text-7xl leading-tight text-[#1b1c1a] font-light">
         Dificuldade para desacelerar <br class="hidden md:block"/> <span class="italic text-[#B08A53]">mesmo quando precisa?</span>

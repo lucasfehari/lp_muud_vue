@@ -1,5 +1,5 @@
 <template>
-  <section class="py-32 px-8 bg-white">
+  <section class="py-32 px-8 bg-on-primary">
     <div class="max-w-7xl mx-auto space-y-20">
       <div class="text-center space-y-6">
         <h2 class="font-headline text-4xl md:text-5xl text-on-surface font-light">
@@ -61,10 +61,8 @@
       </div>
       
       <!-- Section CTA -->
-      <div class="pt-20 text-center">
-        <NuxtLink to="/calm" class="inline-block border border-[#B08A53] text-[#1b1c1a] px-14 py-4 font-label text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-surface-container transition-colors rounded-none">
-          CONHEÇA O MUUD CALM
-        </NuxtLink>
+      <div class="pt-5 text-center">
+        <ButtonGradient text="Conheça o MUUD Calm" link="#comprar" />
       </div>
     </div>
   </section>
