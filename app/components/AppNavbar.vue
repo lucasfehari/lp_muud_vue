@@ -15,7 +15,7 @@
       </a>
       
       <!-- CTA pill -->
-      <a href="#comprar" class="text-[#1b1c1a] bg-white/95 hover:bg-white backdrop-blur-md transition-all duration-300 font-label uppercase tracking-[0.2em] text-[10px] font-bold px-8 py-3.5 rounded-full ml-4 shadow-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transform hover:-translate-y-0.5">
+      <a href="https://muud-9850.myshopify.com/cart/45404886237363:1?checkout" class="text-[#1b1c1a] bg-white/95 hover:bg-white backdrop-blur-md transition-all duration-300 font-label uppercase tracking-[0.2em] text-[10px] font-bold px-8 py-3.5 rounded-full ml-4 shadow-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transform hover:-translate-y-0.5">
         Comprar
       </a>
     </div>
@@ -30,7 +30,7 @@
       <a href="#inicio" class="text-white/80 font-label uppercase tracking-[0.2em] text-[11px] font-bold" @click="mobileOpen = false">Início</a>
       <a href="#produtos" class="text-white/80 font-label uppercase tracking-[0.2em] text-[11px] font-bold" @click="mobileOpen = false">Produtos</a>
       <a href="#calm" class="text-white/80 font-label uppercase tracking-[0.2em] text-[11px] font-bold" @click="mobileOpen = false">MUUD Calm</a>
-      <a href="#comprar" class="text-white bg-[#B08A53] px-10 py-4 font-label text-[11px] font-bold tracking-[0.2em] uppercase" @click="mobileOpen = false">Comprar</a>
+      <a href="https://muud-9850.myshopify.com/cart/45404886237363:1?checkout" class="text-white bg-[#B08A53] px-10 py-4 font-label text-[11px] font-bold tracking-[0.2em] uppercase" @click="mobileOpen = false">Comprar</a>
     </div>
   </nav>
 </template>

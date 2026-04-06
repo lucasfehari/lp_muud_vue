@@ -7,8 +7,6 @@
       <p class="font-body text-[16px] md:text-[18px] text-[#7A756D] max-w-2xl mx-auto leading-relaxed">
         <strong>MUUD Calm</strong> foi pensado para momentos de excesso no dia a dia, um ritual simples que acompanha você enquanto tudo continua acontecendo.
       </p>
-      
-     
     </div>
   </section>
 </template>

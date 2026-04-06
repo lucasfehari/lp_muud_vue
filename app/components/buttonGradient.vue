@@ -8,7 +8,7 @@ export default {
     },
     link: {
       type: String,
-      default: '#comprar'
+      default: 'https://muud-9850.myshopify.com/cart/45404886237363:1?checkout'
     }
   }
 }

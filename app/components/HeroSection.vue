@@ -29,7 +29,7 @@
       </p>
       
       <!-- Modern Button with glow and hover 3D effect -->
-      <ButtonGradient text="Conheça o MUUD Calm" link="#comprar" />
+      <ButtonGradient text="Conheça o MUUD Calm" link="https://muud-9850.myshopify.com/cart/45404886237363:1?checkout" />
       
       <!-- Scroll Indicator -->
       <div class="pt-24 flex flex-col items-center space-y-3 opacity-60">

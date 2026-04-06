@@ -108,7 +108,7 @@
       
       <!-- Section CTA -->
       <div class="pt-5 text-center">
-        <ButtonGradient text="Conheça o MUUD Calm" link="#comprar" />
+        <ButtonGradient text="Conheça o MUUD Calm" link="https://muud-9850.myshopify.com/cart/45404886237363:1?checkout" />
       </div>
     </div>
   </section>
