@@ -7,10 +7,10 @@
       
       <div class="p-3 border border-[#EBE8E0] bg-[#FBF9F6] max-w-lg mx-auto flex flex-col items-center">
         <img src="/assets/images/caixa_pirulito.png" alt="MUUD Calm" class="w-full h-auto object-contain" />
-        <div class="text-[40px] font-headline text-[#1b1c1a] leading-none mb-1">R$ 99,90</div>
-        <p class="text-[14px] text-[#7A756D] mb-2 font-medium">ou 3x de R$ 33,30 sem juros</p>
+        <div class="text-[40px] font-headline text-[#1b1c1a] leading-none mb-1">R$ 59,99</div>
+        <p class="text-[14px] text-[#7A756D] mb-2 font-medium">ou 2x de R$ 29,99 sem juros</p>
         <LinhaDivisao class="mb-0" />
-        <ButtonGradient text="Comprar Agora"  link="https://muud-9850.myshopify.com/cart/45404886237363:1?checkout" />
+        <ButtonGradient text="Comprar Agora"  link="/calm" />
       </div>
     </div>
   </section>

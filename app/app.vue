@@ -1,28 +1,18 @@
 <template>
-  <div>
-    <AppNavbar />
-    <main>
-      <!-- Página 1 -->
-      <section id="inicio">
-        <HeroSection />
-      </section>
-      <section id="produtos">
-        <ArsenalSection />
-      </section>
-      <section id="calm">
-        <HomePitchSection />
-      </section>
+  <!--
+    app.vue — Raiz da aplicação Nuxt
+    ─────────────────────────────────────────────────────────────────────────────
+    Usa <NuxtPage /> para renderizar a página correta conforme a rota:
+      - /       → pages/index.vue  (Landing page principal)
+      - /calm   → pages/calm.vue   (Página de produto MUUD Calm)
 
-      <!-- Página 2: Calm -->
-      <section id="comprar">
-        <CalmHeroSection />
-      </section>
-      <CalmRoutineSection />
-      <CalmMomentsSection />
-      <CalmIngredientsSection />
-      <CalmFooterCTASection />
-    </main>
-    <AppFooter />
+    O <AppNavbar> e <AppFooter> aparecem na rota "/" via index.vue.
+    O CartDrawer é renderizado aqui globalmente para ser acessível de qualquer página.
+    ─────────────────────────────────────────────────────────────────────────────
+  -->
+  <div>
+    <CartDrawer />
+    <NuxtPage />
   </div>
 </template>
 

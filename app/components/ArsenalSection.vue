@@ -1,5 +1,6 @@
 <template>
   <section class="py-32 px-8 bg-on-primary">
+
     <LinhaDivisao />
     <div class="max-w-7xl mx-auto space-y-20">
       <div class="text-center space-y-6">
@@ -12,9 +13,30 @@
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Product 1: Calm -->
-        <div class="bg-[#FBF9F6] border border-[#EBE8E0] flex flex-col h-full pb-8">
-          <img alt="MUUD Calm" class="w-full aspect-square object-cover" src="/assets/images/caixa_pirulito.png"/>
+        <!-- Product 1: Calm — link para página dedicada /calm -->
+        <NuxtLink
+          id="product-card-calm"
+          to="/calm"
+          class="
+            bg-[#FBF9F6] border border-[#EBE8E0] flex flex-col h-full pb-8
+            group transition-colors duration-300
+            hover:border-[#B48C57]/40 no-underline
+          "
+          aria-label="Ver e comprar MUUD Calm"
+        >
+          <div class="relative overflow-hidden">
+            <img
+              alt="MUUD Calm"
+              class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              src="/assets/images/caixa_pirulito.png"
+            />
+            <!-- Badge hover: "Ver produto" -->
+            <div class="absolute inset-0 bg-[#B48C57]/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="font-label text-[10px] tracking-[0.25em] uppercase text-[#4f453a] bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-[#D2C4B6]">
+                Ver produto
+              </span>
+            </div>
+          </div>
           <div class="pt-8 flex flex-col items-center flex-grow text-center">
             <h3 class="font-headline text-3xl text-[#1b1c1a] mb-3">Calm</h3>
             <div class="w-6 h-px bg-[#7A98A1] mb-5"></div>
@@ -22,7 +44,7 @@
               Acalmar
             </p>
           </div>
-        </div>
+        </NuxtLink>
 
         <!-- Product 2: Focus -->
         <div class="bg-[#FBF9F6] border border-[#EBE8E0] flex flex-col h-full pb-8 group">
@@ -108,13 +130,15 @@
       
       <!-- Section CTA -->
       <div class="pt-5 text-center">
-        <ButtonGradient text="Conheça o MUUD Calm" link="https://muud-9850.myshopify.com/cart/45404886237363:1?checkout" />
+        <ButtonGradient text="Conheça o MUUD Calm" link="/calm" />
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+// ArsenalSection não precisa mais de estado de drawer.
+// O card Calm agora é um NuxtLink para a rota /calm.
 </script>
 
 <style scoped>

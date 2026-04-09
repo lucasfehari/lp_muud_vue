@@ -8,7 +8,7 @@ export default {
     },
     link: {
       type: String,
-      default: 'https://muud-9850.myshopify.com/cart/45404886237363:1?checkout'
+      default: '/calm'
     }
   }
 }
@@ -17,9 +17,9 @@ export default {
 <template>  
       <!-- Modern Button with glow and hover 3D effect -->
       <div class="pt-12">
-        <a :href=link class="relative group overflow-hidden bg-gradient-to-r from-[#B08A53] via-[#D1B181] to-[#B08A53] text-white px-14 py-5 font-label text-[11px] font-bold tracking-[0.25rem] uppercase transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_15px_30px_-5px_rgba(176,138,83,0.5)] inline-block">
+        <NuxtLink :to="link" class="relative group overflow-hidden bg-gradient-to-r from-[#B08A53] via-[#D1B181] to-[#B08A53] text-white px-14 py-5 font-label text-[11px] font-bold tracking-[0.25rem] uppercase transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_15px_30px_-5px_rgba(176,138,83,0.5)] inline-block no-underline">
           <span class="relative z-10 transition-transform duration-300 group-hover:scale-105 inline-block">{{ text }}</span>
-        </a>
+        </NuxtLink>
       </div>
 </template>
 
