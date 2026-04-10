@@ -28,7 +28,7 @@
             <img
               alt="MUUD Calm"
               class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-              src="/assets/images/caixa_pirulito.png"
+              src="/assets/images/muud_calm.jpeg"
             />
             <!-- Badge hover: "Ver produto" -->
             <div class="absolute inset-0 bg-[#B48C57]/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">

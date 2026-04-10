@@ -1,39 +1,83 @@
 <template>
+  <!--
+    CalmIngredientsSection.vue — Dobra 6: Ativos (Layout Órbita)
+    VISUAL: mantém o fundo escuro original (#1b1c1a) que JÁ ESTAVA no design.
+            Só altera a estrutura interna para o layout de órbita conforme briefing.
+    CONTEÚDO: imagem central + 2 compostos à esquerda + 2 à direita.
+  -->
   <section class="py-32 px-8 bg-[#1b1c1a] text-white">
     <div class="max-w-5xl mx-auto">
+
+      <!-- Cabeçalho — igual ao original -->
       <div class="text-center mb-20 space-y-6">
         <label class="font-label text-[#E0C8A0] uppercase tracking-[0.3em] text-[10px] font-bold">FÓRMULA LIMPA</label>
         <h2 class="uppercase font-headline text-4xl md:text-5xl font-light">
           O que tem no <span class="text-[#E0C8A0]">seu ritual.</span>
         </h2>
       </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-        <div class="space-y-4 border-t border-white/20 pt-6">
-          <h3 class="font-headline text-2xl text-[#E0C8A0]">L-teanina</h3>
-          <p class="font-body text-white/70 text-[14px] leading-relaxed">
-            Contribui para momentos de relaxamento e foco.
-          </p>
+
+      <!-- ── DESKTOP: Layout Órbita (3 colunas) ─────────────────────────── -->
+      <div class="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:gap-12 md:items-center">
+
+        <!-- Esquerda: L-Theanina + Magnésio -->
+        <div class="flex flex-col gap-12 items-end">
+          <div v-for="comp in compostoLeft" :key="comp.nome" class="text-right space-y-2 border-t border-white/20 pt-6 max-w-[220px]">
+            <h3 class="font-headline text-2xl text-[#E0C8A0]">{{ comp.nome }}</h3>
+            <p class="font-body text-white/70 text-[14px] leading-relaxed">{{ comp.descricao }}</p>
+          </div>
         </div>
-        <div class="space-y-4 border-t border-white/20 pt-6">
-          <h3 class="font-headline text-2xl text-[#E0C8A0]">Magnésio <br/>bisglicinato</h3>
-          <p class="font-body text-white/70 text-[14px] leading-relaxed">
-            Auxilia no funcionamento do organismo.
-          </p>
+
+        <!-- Centro: Imagem da mão segurando o produto -->
+        <div class="relative flex justify-center px-6">
+          <!-- Anéis decorativos (apenas linhas sutis) -->
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full border border-white/10" />
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] rounded-full border border-white/5" />
+          <img
+            src="/assets/images/muud_na_mao.png"
+            alt="Mão segurando o produto MUUD Calm"
+            class="relative z-10 w-full max-w-[240px] object-contain drop-shadow-2xl"
+          />
         </div>
-        <div class="space-y-4 border-t border-white/20 pt-6">
-          <h3 class="font-headline text-2xl text-[#E0C8A0]">Melatonina</h3>
-          <p class="font-body text-white/70 text-[14px] leading-relaxed">
-            Relacionada ao ritmo natural do corpo.
-          </p>
+
+        <!-- Direita: Melatonina + Aromas Naturais -->
+        <div class="flex flex-col gap-12 items-start">
+          <div v-for="comp in compostoRight" :key="comp.nome" class="text-left space-y-2 border-t border-white/20 pt-6 max-w-[220px]">
+            <h3 class="font-headline text-2xl text-[#E0C8A0]">{{ comp.nome }}</h3>
+            <p class="font-body text-white/70 text-[14px] leading-relaxed">{{ comp.descricao }}</p>
+          </div>
         </div>
-        <div class="space-y-4 border-t border-white/20 pt-6">
-          <h3 class="font-headline text-2xl text-[#E0C8A0]">Aromas <br/>naturais</h3>
-          <p class="font-body text-white/70 text-[14px] leading-relaxed">
-            Tornam o momento mais leve, presente e agradável.
-          </p>
+
+      </div>
+
+      <!-- ── MOBILE: Grid original 2×2 com imagem acima ─────────────────── -->
+      <div class="flex flex-col items-center gap-12 md:hidden">
+        <img
+          src="/assets/images/muud_na_mao.png"
+          alt="Mão segurando o produto MUUD Calm"
+          class="w-full max-w-[220px] object-contain drop-shadow-2xl"
+        />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full">
+          <div v-for="comp in todosCompostos" :key="comp.nome" class="space-y-4 border-t border-white/20 pt-6">
+            <h3 class="font-headline text-2xl text-[#E0C8A0]">{{ comp.nome }}</h3>
+            <p class="font-body text-white/70 text-[14px] leading-relaxed">{{ comp.descricao }}</p>
+          </div>
         </div>
       </div>
+
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const compostoLeft = [
+  { nome: 'L-Teanina',  descricao: 'Contribui para momentos de relaxamento e foco.' },
+  { nome: 'Magnésio bisglicinato', descricao: 'Auxilia no funcionamento do organismo.' },
+]
+
+const compostoRight = [
+  { nome: 'Melatonina',      descricao: 'Relacionada ao ritmo natural do corpo.' },
+  { nome: 'Aromas naturais', descricao: 'Tornam o momento mais leve, presente e agradável.' },
+]
+
+const todosCompostos = [...compostoLeft, ...compostoRight]
+</script>
