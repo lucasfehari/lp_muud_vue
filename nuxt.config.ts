@@ -46,7 +46,7 @@ export default defineNuxtConfig({
       ],
       noscript: [
         {
-          children: '<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1480335656865774&ev=PageView&noscript=1" />'
+          innerHTML: '<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1480335656865774&ev=PageView&noscript=1" />'
         }
       ]
     }
