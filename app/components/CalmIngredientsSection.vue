@@ -5,7 +5,7 @@
             Só altera a estrutura interna para o layout de órbita conforme briefing.
     CONTEÚDO: imagem central + 2 compostos à esquerda + 2 à direita.
   -->
-  <section class="py-32 px-8 bg-[#1b1c1a] text-white">
+  <section class="relative pt-32 pb-0 px-8 bg-[#1b1c1a] text-white overflow-hidden">
     <div class="max-w-5xl mx-auto">
 
       <!-- Cabeçalho — igual ao original -->
@@ -27,15 +27,16 @@
           </div>
         </div>
 
-        <!-- Centro: Imagem da mão segurando o produto -->
-        <div class="relative flex justify-center px-6">
+        <!-- Centro: Imagem da mão segurando o produto — ancorada ao bottom -->
+        <div class="relative flex justify-center px-6 self-end">
           <!-- Anéis decorativos (apenas linhas sutis) -->
-          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full border border-white/10" />
-          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] rounded-full border border-white/5" />
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] rounded-full border border-white/10" />
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[420px] h-[420px] rounded-full border border-white/5" />
           <img
             src="/assets/images/muud_na_mao.png"
             alt="Mão segurando o produto MUUD Calm"
-            class="relative z-10 w-full max-w-[240px] object-contain drop-shadow-2xl"
+            class="relative z-10 w-full max-w-[360px] object-contain drop-shadow-2xl"
+            style="margin-bottom: -80px;"
           />
         </div>
 
@@ -49,19 +50,29 @@
 
       </div>
 
-      <!-- ── MOBILE: Grid original 2×2 com imagem acima ─────────────────── -->
-      <div class="flex flex-col items-center gap-12 md:hidden">
-        <img
-          src="/assets/images/muud_na_mao.png"
-          alt="Mão segurando o produto MUUD Calm"
-          class="w-full max-w-[220px] object-contain drop-shadow-2xl"
-        />
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full">
-          <div v-for="comp in todosCompostos" :key="comp.nome" class="space-y-4 border-t border-white/20 pt-6">
-            <h3 class="font-headline text-2xl text-[#E0C8A0]">{{ comp.nome }}</h3>
-            <p class="font-body text-white/70 text-[14px] leading-relaxed">{{ comp.descricao }}</p>
+      <!-- ── MOBILE: 2x2 ingredientes + imagem grudada no bottom ── -->
+      <div class="flex flex-col items-center md:hidden">
+
+        <!-- Grid 2x2 de ingredientes -->
+        <div class="grid grid-cols-2 gap-x-6 gap-y-10 w-full mb-12">
+          <div v-for="comp in todosCompostos" :key="comp.nome" class="space-y-2 border-t border-white/20 pt-5">
+            <h3 class="font-headline text-xl text-[#E0C8A0]">{{ comp.nome }}</h3>
+            <p class="font-body text-white/70 text-[13px] leading-relaxed">{{ comp.descricao }}</p>
           </div>
         </div>
+
+        <!-- Imagem grudada no bottom -->
+        <div class="relative w-full flex justify-center">
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[260px] h-[260px] rounded-full border border-white/10" />
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[340px] h-[340px] rounded-full border border-white/5" />
+          <img
+            src="/assets/images/muud_na_mao.png"
+            alt="Mao segurando o produto MUUD Calm"
+            class="relative z-10 w-full max-w-[300px] object-contain drop-shadow-2xl"
+            style="margin-bottom: -80px;"
+          />
+        </div>
+
       </div>
 
     </div>

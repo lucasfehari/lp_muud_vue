@@ -21,8 +21,12 @@
       </div>
 
       <div class="pt-4 flex flex-col items-center">
-        <div class="text-[36px] font-headline text-[#1b1c1a] leading-none mb-1">R$ 59,99</div>
-        <p class="text-[12px] text-[#9A938A] mb-8 font-medium">ou 2x de R$ 29,99 sem juros</p>
+        <!-- Preço dinâmico via Shopify Storefront API -->
+        <div class="text-[36px] font-headline text-[#1b1c1a] leading-none mb-1">
+          <span v-if="loading" class="inline-block w-32 h-9 bg-[#EBE8E0] animate-pulse rounded" />
+          <span v-else>{{ displayPrice }}</span>
+        </div>
+        <p class="text-[12px] text-[#9A938A] mb-8 font-medium">{{ installmentPrice }}</p>
 
         <NuxtLink
           to="/calm"
@@ -31,7 +35,7 @@
           Comprar agora
         </NuxtLink>
 
-        <p class="font-label text-[9px] uppercase tracking-widest text-[#B08A53] mt-6 flex flex-wrap justify-center items-center gap-2">
+        <p class="font-label text-[13px] uppercase tracking-widest text-[#B08A53] mt-6 flex flex-wrap justify-center items-center gap-2">
           <span class="material-symbols-outlined text-[14px]">lock</span> Pagamento seguro
           <span class="mx-2 hidden md:inline">•</span>
           <span class="material-symbols-outlined text-[14px]">local_shipping</span> Entrega para todo o Brasil
@@ -41,6 +45,10 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { displayPrice, installmentPrice, loading } = useProductPrice()
+</script>
 
 <style scoped>
 @keyframes peek {

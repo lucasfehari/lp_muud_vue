@@ -136,9 +136,10 @@
           <!-- Divisória -->
           <div class="w-10 h-px bg-[#D2C4B6]" />
 
-          <!-- Preço -->
+          <!-- Preço dinâmico via Shopify Storefront API -->
           <div class="flex items-baseline gap-2 flex-wrap">
-            <span class="font-headline text-[2.4rem] text-[#1b1c1a]">R$ 59,99</span>
+            <span v-if="priceLoading" class="inline-block w-36 h-10 bg-[#EBE8E0] animate-pulse rounded" />
+            <span v-else class="font-headline text-[2.4rem] text-[#1b1c1a]">{{ displayPrice }}</span>
             <span class="font-body text-[13px] text-[#7A756D]">/ caixa com 5 pirulitos</span>
           </div>
 
@@ -219,6 +220,9 @@
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
+// ─── Preço dinâmico da Shopify ─────────────────────────────────────────────
+const { displayPrice, priceInCents, loading: priceLoading } = useProductPrice()
+
 // ─── ID do variant Shopify ───────────────────────────────────────────────────
 // ✅  ID capturado automaticamente da loja muud-9850
 const MERCHANDISE_ID = 'gid://shopify/ProductVariant/45404886237363'
@@ -237,7 +241,8 @@ const ingredients = [
 
 // ─── Tracking: AddToCart ──────────────────────────────────────────────────────
 function trackAddToCart() {
-  const value = 129.00 * quantity.value
+  const unitPrice = priceInCents.value / 100
+  const value     = unitPrice * quantity.value
 
   // Meta Pixel
   if (typeof window !== 'undefined' && (window as any).fbq) {
@@ -260,7 +265,7 @@ function trackAddToCart() {
         item_id:   'muud-calm',
         item_name: 'MUUD Calm',
         quantity:  quantity.value,
-        price:     129.00,
+        price:     priceInCents.value / 100,
       }],
     })
   }
@@ -275,7 +280,7 @@ function handleAddToCart() {
     {
       merchandiseId: MERCHANDISE_ID,
       name:          'MUUD Calm (5 un)',
-      priceInCents:  5999,
+      priceInCents:  priceInCents.value,
       imageUrl:      '/assets/images/caixa_pirulito.png',
     },
     quantity.value

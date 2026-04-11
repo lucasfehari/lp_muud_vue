@@ -24,6 +24,9 @@
         <HomePitchSection />
       </section>
 
+      <!-- Claims: Sugar Free, Gluten Free, Lactose Free, No Artificial Colors -->
+      <HomeClaimsSection />
+
       <!-- Seções informativas do Calm (mantidas na landing para SEO e narrativa) -->
       <section id="comprar">
         <CalmHeroSection />
