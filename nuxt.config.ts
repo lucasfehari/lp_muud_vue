@@ -28,6 +28,21 @@ export default defineNuxtConfig({
         }
       ],
       script: [
+        // ─── Google Tag Manager ───────────────────────────────────────────────
+        // Instalado no <head> para garantir que o GTM carregue antes de qualquer
+        // interação do usuário. O ID GTM-WRWL94TJ é o container do cliente.
+        {
+          innerHTML: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WRWL94TJ');`,
+          type: 'text/javascript',
+          tagPosition: 'head',
+        },
+        // ─── Meta Pixel ───────────────────────────────────────────────────────
+        // Mantido aqui para disparar AddToCart, AddToWishlist etc. diretamente
+        // via fbq() no código Vue, independente do GTM.
         {
           innerHTML: `
             !function(f,b,e,v,n,t,s)
@@ -41,12 +56,22 @@ export default defineNuxtConfig({
             fbq('init', '1480335656865774');
             fbq('track', 'PageView');
           `,
-          type: 'text/javascript'
+          type: 'text/javascript',
+          tagPosition: 'head',
         }
       ],
       noscript: [
+        // ─── GTM noscript (fallback sem JavaScript) ───────────────────────────
+        // O Google exige este iframe logo após o <body> — o Nuxt injeta
+        // os noscripts no início do body automaticamente.
         {
-          innerHTML: '<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1480335656865774&ev=PageView&noscript=1" />'
+          innerHTML: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRWL94TJ" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+          tagPosition: 'bodyOpen',
+        },
+        // ─── Meta Pixel noscript ──────────────────────────────────────────────
+        {
+          innerHTML: '<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1480335656865774&ev=PageView&noscript=1" />',
+          tagPosition: 'bodyOpen',
         }
       ]
     }
