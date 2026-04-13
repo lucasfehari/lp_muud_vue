@@ -113,7 +113,7 @@
           <!-- Descrição -->
           <p class="font-body text-[14px] md:text-[15px] text-[#716A62] leading-[1.8]">
             Uma fórmula botânica desenvolvida para apoiar sua resposta ao estresse diário.
-            Ashwagandha, L-Teanina e Passiflora em uma caixa discreta com 3 pirulitos funcionais
+            Ashwagandha, L-Teanina e Passiflora em uma caixa discreta com 5 pirulitos funcionais
             — para usar quando precisar, sem alterar sua rotina.
           </p>
 

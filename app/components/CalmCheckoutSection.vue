@@ -16,16 +16,16 @@
         <img src="/assets/images/caixa_pirulito.png" alt="MUUD Calm — 5 pirulitos funcionais" class="w-full h-auto object-contain" />
 
         <!-- Preço dinâmico — skeleton enquanto carrega -->
-        <div v-if="shopify.isLoading.value" class="space-y-2 animate-pulse my-2">
+        <div v-if="loading" class="space-y-2 animate-pulse my-2">
           <div class="h-10 w-36 bg-[#EBE8E0] rounded mx-auto" />
           <div class="h-4 w-48 bg-[#EBE8E0] rounded mx-auto" />
         </div>
         <template v-else>
           <div class="text-[40px] font-headline text-[#1b1c1a] leading-none mb-1">
-            {{ shopify.priceFormatted.value }}
+            {{ displayPrice }}
           </div>
           <p class="text-[14px] text-[#7A756D] mb-1 font-medium">
-            ou {{ shopify.installmentText.value }}
+            {{ installmentPrice }}
           </p>
         </template>
 
@@ -77,15 +77,15 @@
 </template>
 
 <script setup lang="ts">
-// Import explícito com caminho relativo.
-// O alias `~` resolve para a raiz do projeto, mas o arquivo está em `app/composables/`.
-// Por isso usamos o caminho relativo: de `app/components/` → `app/composables/`.
-import { useShopifyPrice } from '../composables/useShopifyPrice'
-
+// ID do variante Shopify — para tracking e para adicionar ao carrinho
 const MERCHANDISE_ID = 'gid://shopify/ProductVariant/45404886237363'
 
-const shopify = useShopifyPrice()
-const cart    = useCart()
+// useProductPrice é o composable correto — compartilha o mesmo cache singleton
+// com o HomePitchSection, então o fetch já foi feito quando chegamos aqui.
+const { displayPrice, installmentPrice, priceInCents, loading } = useProductPrice()
+
+// useCart é auto-importado pelo Nuxt (está em app/composables/useCart.ts)
+const cart = useCart()
 
 function handleAddToCart() {
   // Tracking Meta Pixel
@@ -94,7 +94,7 @@ function handleAddToCart() {
       content_ids:  [MERCHANDISE_ID],
       content_name: 'MUUD Calm',
       content_type: 'product',
-      value:        shopify.priceInCents.value / 100,
+      value:        priceInCents.value / 100,
       currency:     'BRL',
     })
   }
@@ -102,15 +102,15 @@ function handleAddToCart() {
   if (typeof window !== 'undefined' && (window as any).gtag) {
     ;(window as any).gtag('event', 'add_to_cart', {
       currency: 'BRL',
-      value:    shopify.priceInCents.value / 100,
-      items: [{ item_id: 'muud-calm', item_name: 'MUUD Calm', quantity: 1, price: shopify.priceInCents.value / 100 }],
+      value:    priceInCents.value / 100,
+      items: [{ item_id: 'muud-calm', item_name: 'MUUD Calm', quantity: 1, price: priceInCents.value / 100 }],
     })
   }
   cart.addItem(
     {
       merchandiseId: MERCHANDISE_ID,
       name:          'MUUD Calm (5 un)',
-      priceInCents:  shopify.priceInCents.value,
+      priceInCents:  priceInCents.value,
       imageUrl:      '/assets/images/caixa_pirulito.png',
     },
     1

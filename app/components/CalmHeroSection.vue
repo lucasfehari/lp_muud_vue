@@ -10,7 +10,8 @@
 
       <!-- Sub-headline -->
       <p class="font-body text-[16px] md:text-[18px] text-[#7A756D] max-w-2xl mx-auto leading-relaxed">
-        <strong>MUUD Calm</strong> foi pensado para momentos de excesso no dia a dia, um ritual simples que acompanha você enquanto tudo continua acontecendo.
+        <strong>MUUD Calm</strong> é um suplemento pensado para ajudar no controle do
+        relaxamento, estresse e excesso de estímulos do dia a dia.
       </p>
 
     </div>

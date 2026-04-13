@@ -18,6 +18,9 @@
       <section id="produtos">
         <ArsenalSection />
       </section>
+      <section id="comprar">
+        <CalmHeroSection />
+      </section>
 
       <!-- Pitch / conceito MUUD -->
       <section id="calm">
@@ -28,9 +31,7 @@
       <HomeClaimsSection />
 
       <!-- Seções informativas do Calm (mantidas na landing para SEO e narrativa) -->
-      <section id="comprar">
-        <CalmHeroSection />
-      </section>
+     
       <CalmRoutineSection />
       <CalmMomentsSection />
       <CalmIngredientsSection />
