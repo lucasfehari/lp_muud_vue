@@ -130,15 +130,38 @@
       
       <!-- Section CTA -->
       <div class="pt-5 text-center">
-        <ButtonGradient text="Conheça o MUUD Calm" link="/calm" />
+        <ButtonGradient text="Conheça o MUUD Calm" link="/calm" :on-track="trackAddToWishlist" />
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-// ArsenalSection não precisa mais de estado de drawer.
-// O card Calm agora é um NuxtLink para a rota /calm.
+/**
+ * trackAddToWishlist — LP: botão "Conheça o MUUD Calm" (ArsenalSection).
+ *
+ * Mesmo comportamento do CalmFooterCTASection: o clique demonstra interesse
+ * no produto antes de ir para a página de compra. Evento ideal: AddToWishlist.
+ */
+function trackAddToWishlist() {
+  // ── Meta Pixel ──────────────────────────────────────────────────────────────
+  if (typeof window !== 'undefined' && (window as any).fbq) {
+    ;(window as any).fbq('track', 'AddToWishlist', {
+      content_name: 'MUUD Calm',
+      content_ids:  ['muud-calm'],
+      content_type: 'product',
+      currency:     'BRL',
+    })
+  }
+
+  // ── Google Ads / GA4 ────────────────────────────────────────────────────────
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    ;(window as any).gtag('event', 'add_to_wishlist', {
+      currency: 'BRL',
+      items: [{ item_id: 'muud-calm', item_name: 'MUUD Calm', quantity: 1 }],
+    })
+  }
+}
 </script>
 
 <style scoped>

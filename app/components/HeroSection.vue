@@ -27,7 +27,7 @@
       
       <!-- Modern Button with glow and hover 3D effect -->
       <!-- Modern Button with glow and hover 3D effect -->
-      <ButtonGradient text="Começar pelo MUUD Calm" link="/calm" />
+      <ButtonGradient text="Começar pelo MUUD Calm" link="/calm" :on-track="trackAddToWishlist" />
       
       <!-- Scroll Indicator -->
       <div class="pt-24 flex flex-col items-center space-y-3 opacity-60">
@@ -37,6 +37,35 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+/**
+ * trackAddToWishlist — HeroSection: CTA principal da LP.
+ *
+ * Primeiro ponto de contato do usuário com intenção de compra.
+ * Disparar AddToWishlist aqui alimenta o tópico de auditoria
+ * de funil desde o topo até o checkout.
+ */
+function trackAddToWishlist() {
+  // ── Meta Pixel ──────────────────────────────────────────────────────────────
+  if (typeof window !== 'undefined' && (window as any).fbq) {
+    ;(window as any).fbq('track', 'AddToWishlist', {
+      content_name: 'MUUD Calm',
+      content_ids:  ['muud-calm'],
+      content_type: 'product',
+      currency:     'BRL',
+    })
+  }
+
+  // ── Google Ads / GA4 ────────────────────────────────────────────────────────
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    ;(window as any).gtag('event', 'add_to_wishlist', {
+      currency: 'BRL',
+      items: [{ item_id: 'muud-calm', item_name: 'MUUD Calm', quantity: 1 }],
+    })
+  }
+}
+</script>
 
 <style scoped>
 .animate-fade-in-up {

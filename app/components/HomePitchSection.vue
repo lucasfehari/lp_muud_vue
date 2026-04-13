@@ -31,6 +31,7 @@
         <NuxtLink
           to="/calm"
           class="bg-gradient-to-r from-[#B08A53] via-[#D1B181] to-[#B08A53] text-white px-16 py-5 font-label text-[11px] tracking-[0.2em] font-bold uppercase transition-all duration-300 hover:brightness-110 w-full max-w-md shadow-xl hover:-translate-y-1 text-center no-underline"
+          @click="trackAddToWishlist"
         >
           Comprar agora
         </NuxtLink>
@@ -48,6 +49,32 @@
 
 <script setup lang="ts">
 const { displayPrice, installmentPrice, loading } = useProductPrice()
+
+/**
+ * trackAddToWishlist — HomePitchSection: botão "Comprar agora".
+ *
+ * Assim como os outros CTAs da LP, este botão navega para /calm
+ * sem adicionar ao carrinho. Evento correto: AddToWishlist.
+ */
+function trackAddToWishlist() {
+  // ── Meta Pixel ──────────────────────────────────────────────────────────────
+  if (typeof window !== 'undefined' && (window as any).fbq) {
+    ;(window as any).fbq('track', 'AddToWishlist', {
+      content_name: 'MUUD Calm',
+      content_ids:  ['muud-calm'],
+      content_type: 'product',
+      currency:     'BRL',
+    })
+  }
+
+  // ── Google Ads / GA4 ────────────────────────────────────────────────────────
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    ;(window as any).gtag('event', 'add_to_wishlist', {
+      currency: 'BRL',
+      items: [{ item_id: 'muud-calm', item_name: 'MUUD Calm', quantity: 1 }],
+    })
+  }
+}
 </script>
 
 <style scoped>

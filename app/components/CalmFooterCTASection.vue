@@ -14,7 +14,7 @@
         </div>
         <p class="text-[12px] text-[#9A938A] mb-8 font-medium">{{ installmentPrice }}</p>
         <LinhaDivisao class="mb-0" />
-        <ButtonGradient text="Comprar Agora"  link="/calm" />
+        <ButtonGradient text="Comprar Agora" link="/calm" :on-track="trackAddToWishlist" />
       </div>
     </div>
   </section>
@@ -22,4 +22,33 @@
 
 <script setup lang="ts">
 const { displayPrice, installmentPrice, loading } = useProductPrice()
+
+/**
+ * trackAddToWishlist — Disparado ao clicar no botão da LP (CalmFooterCTASection).
+ *
+ * Por quê "AddToWishlist"? O botão da landing page não adiciona ao carrinho
+ * diretamente — ele navega para a página do produto. O evento correto da Meta
+ * para esse comportamento (demonstrar interesse antes da compra) é AddToWishlist.
+ * Isso alimenta o funil de retargeting com usuários que demonstraram intentão.
+ */
+function trackAddToWishlist() {
+  // ── Meta Pixel ──────────────────────────────────────────────────────────────
+  if (typeof window !== 'undefined' && (window as any).fbq) {
+    ;(window as any).fbq('track', 'AddToWishlist', {
+      content_name: 'MUUD Calm',
+      content_ids:  ['muud-calm'],
+      content_type: 'product',
+      currency:     'BRL',
+    })
+  }
+
+  // ── Google Ads / GA4 ────────────────────────────────────────────────────────
+  // Evento equivalente ao AddToWishlist no GA4
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    ;(window as any).gtag('event', 'add_to_wishlist', {
+      currency: 'BRL',
+      items: [{ item_id: 'muud-calm', item_name: 'MUUD Calm', quantity: 1 }],
+    })
+  }
+}
 </script>
