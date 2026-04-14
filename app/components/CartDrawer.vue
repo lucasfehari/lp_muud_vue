@@ -232,7 +232,7 @@ function trackInitiateCheckout() {
 
   // Meta Pixel
   if (typeof window !== 'undefined' && (window as any).fbq) {
-    ;(window as any).fbq('track', 'InitiateCheckout', {
+    ;(window as any).fbq('trackCustom', 'CustomInitiateCheckout', {
       value:       totalValue,
       currency:    'BRL',
       num_items:   cart.totalItems.value,
@@ -240,9 +240,11 @@ function trackInitiateCheckout() {
     })
   }
 
-  // Google Ads / GA4
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    ;(window as any).gtag('event', 'begin_checkout', {
+  // Google Tag Manager / DataLayer (GA4 via GTM)
+  if (typeof window !== 'undefined') {
+    ;(window as any).dataLayer = (window as any).dataLayer || [];
+    ;(window as any).dataLayer.push({
+      event: 'begin_checkout',
       currency: 'BRL',
       value:    totalValue,
       items:    cart.items.map((i) => ({

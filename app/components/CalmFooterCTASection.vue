@@ -34,7 +34,7 @@ const { displayPrice, installmentPrice, loading } = useProductPrice()
 function trackAddToWishlist() {
   // ── Meta Pixel ──────────────────────────────────────────────────────────────
   if (typeof window !== 'undefined' && (window as any).fbq) {
-    ;(window as any).fbq('track', 'AddToWishlist', {
+    ;(window as any).fbq('trackCustom', 'CustomAddToWishlist', {
       content_name: 'MUUD Calm',
       content_ids:  ['muud-calm'],
       content_type: 'product',
@@ -42,10 +42,11 @@ function trackAddToWishlist() {
     })
   }
 
-  // ── Google Ads / GA4 ────────────────────────────────────────────────────────
-  // Evento equivalente ao AddToWishlist no GA4
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    ;(window as any).gtag('event', 'add_to_wishlist', {
+  // ── Google Tag Manager / DataLayer ──────────────────────────────────────────
+  if (typeof window !== 'undefined') {
+    ;(window as any).dataLayer = (window as any).dataLayer || [];
+    ;(window as any).dataLayer.push({
+      event: 'click_cta',
       currency: 'BRL',
       items: [{ item_id: 'muud-calm', item_name: 'MUUD Calm', quantity: 1 }],
     })

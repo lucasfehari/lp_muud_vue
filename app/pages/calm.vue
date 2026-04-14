@@ -246,7 +246,7 @@ function trackAddToCart() {
 
   // Meta Pixel
   if (typeof window !== 'undefined' && (window as any).fbq) {
-    ;(window as any).fbq('track', 'AddToCart', {
+    ;(window as any).fbq('trackCustom', 'CustomAddToCart', {
       content_ids:  [MERCHANDISE_ID],
       content_name: 'MUUD Calm',
       content_type: 'product',
@@ -256,9 +256,11 @@ function trackAddToCart() {
     })
   }
 
-  // Google Ads / GA4
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    ;(window as any).gtag('event', 'add_to_cart', {
+  // Google Tag Manager / DataLayer (GA4 via GTM)
+  if (typeof window !== 'undefined') {
+    ;(window as any).dataLayer = (window as any).dataLayer || [];
+    ;(window as any).dataLayer.push({
+      event: 'add_to_cart',
       currency: 'BRL',
       value,
       items: [{
@@ -288,6 +290,29 @@ function handleAddToCart() {
   // Reseta a quantidade da página para 1 após adicionar
   quantity.value = 1
 }
+
+// ─── Tracking de Visualização da Página (ViewContent / add_to_wishlist) ───────
+// O Diretor configurou a 'TAG PAGINA MUUD CALM' no GTM para disparar
+// quando o evento for 'add_to_wishlist'
+onMounted(() => {
+  if (typeof window !== 'undefined') {
+    // GTM Push
+    ;(window as any).dataLayer = (window as any).dataLayer || [];
+    ;(window as any).dataLayer.push({
+      event: 'add_to_wishlist',
+      page_name: 'MUUD Calm Product Page',
+    })
+
+    // Meta Pixel (Visita na página)
+    if ((window as any).fbq) {
+      ;(window as any).fbq('trackCustom', 'CustomViewContent', {
+        content_name: 'MUUD Calm',
+        content_ids: [MERCHANDISE_ID],
+        content_type: 'product',
+      })
+    }
+  }
+})
 </script>
 
 <style scoped>

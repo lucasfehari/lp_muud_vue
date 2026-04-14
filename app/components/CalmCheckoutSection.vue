@@ -90,7 +90,7 @@ const cart = useCart()
 function handleAddToCart() {
   // Tracking Meta Pixel
   if (typeof window !== 'undefined' && (window as any).fbq) {
-    ;(window as any).fbq('track', 'AddToCart', {
+    ;(window as any).fbq('trackCustom', 'CustomAddToCart', {
       content_ids:  [MERCHANDISE_ID],
       content_name: 'MUUD Calm',
       content_type: 'product',
@@ -98,9 +98,11 @@ function handleAddToCart() {
       currency:     'BRL',
     })
   }
-  // Tracking Google Ads / GA4
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    ;(window as any).gtag('event', 'add_to_cart', {
+  // Tracking Google / DataLayer
+  if (typeof window !== 'undefined') {
+    ;(window as any).dataLayer = (window as any).dataLayer || [];
+    ;(window as any).dataLayer.push({
+      event: 'add_to_cart',
       currency: 'BRL',
       value:    priceInCents.value / 100,
       items: [{ item_id: 'muud-calm', item_name: 'MUUD Calm', quantity: 1, price: priceInCents.value / 100 }],
