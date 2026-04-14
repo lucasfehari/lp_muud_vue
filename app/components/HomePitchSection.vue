@@ -19,8 +19,9 @@
           class="w-full max-w-[400px] h-auto object-contain"
         />
       </div>
-
-      <div class="pt-4 flex flex-col items-center">
+      <div class="!mt-2 flex flex-col items-center">
+        <p class="uppercase text-[10px] text-[#9A938A] mb-1 font-medium">Caixa contém 5 unidades</p>
+        
         <!-- Preço dinâmico via Shopify Storefront API -->
         <div class="text-[36px] font-headline text-[#1b1c1a] leading-none mb-1">
           <span v-if="loading" class="inline-block w-32 h-9 bg-[#EBE8E0] animate-pulse rounded" />

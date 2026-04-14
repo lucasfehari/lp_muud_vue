@@ -246,7 +246,7 @@ function trackAddToCart() {
 
   // Meta Pixel
   if (typeof window !== 'undefined' && (window as any).fbq) {
-    ;(window as any).fbq('trackCustom', 'CustomAddToCart', {
+    ;(window as any).fbq('trackCustom', 'AddToCart', {
       content_ids:  [MERCHANDISE_ID],
       content_name: 'MUUD Calm',
       content_type: 'product',
